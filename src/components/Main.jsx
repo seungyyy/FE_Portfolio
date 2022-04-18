@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 import ModalContact from './ModalContact';
+import LinkButton from './common/LinkButton';
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,20 @@ const Main = () => {
         서버 api와 연결해 사이트 배포 경험을 통해서 설계와 협업에 대해 배울 수 있었습니다. <br />
         서비스에 대해 생각하고 몰입하여 디테일한 것도 놓치지 않는 개발자입니다.
       </p>
+      <ContactBtn
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+        className="contact-btn"
+      >
+        Contact me
+      </ContactBtn>
       <ul className="about-list">
         <li>
-          <button onClick={() => { setIsOpen(!isOpen)} } className="contact-btn">Contact me</button>
+          <LinkButton src={'./images/github-logo-white.png'} name="git" />
+        </li>
+        <li>
+          <LinkButton src={'./images/velog-icon.png'} name="velog" />
         </li>
       </ul>
     </Container>
@@ -41,27 +53,31 @@ const Container = styled.div`
     color: ${theme.colors.white};
   }
   .about-list {
-    margin-top: 2rem;
-    .contact-btn {
-      padding: 0.7rem 1rem;
-      color: ${theme.colors.white};
-      font-size: 1rem;
-      border-radius: 3px;
-      cursor: pointer;
-      background: linear-gradient(-45deg, #fcd900, #eb606e, #0052cd, #5b5cfe);
-      animation: gradientBackground 13s ease infinite;
-      background-size: 400% 400%;
-      @keyframes gradientBackground {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+    display: flex;
+    align-items: center;
+  }
+`;
+
+const ContactBtn = styled.button`
+  display: block;
+  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  color: ${theme.colors.white};
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  background: linear-gradient(-45deg, #fcd900, #eb606e, #0052cd, #5b5cfe);
+  animation: gradientBackground 13s ease infinite;
+  background-size: 400% 400%;
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 `;
