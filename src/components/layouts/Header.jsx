@@ -40,10 +40,10 @@ const Headers = styled.header`
           margin-left: 5rem;
         }
       }
-
       button {
         color: ${theme.colors.white};
         font-size: 1.4rem;
+        cursor: pointer;
       }
     }
   }

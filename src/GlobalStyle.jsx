@@ -49,6 +49,11 @@ button {
   font-family: "SpoqaHanSansNeo-Regular", "sans-serif";
   background: inherit;
   border: none;
+  outline: none;
+}
+input, textarea {
+  font-family: "SpoqaHanSansNeo-Regular", "sans-serif";
+  outline: none;
 }
 img {
   width: 100%;
