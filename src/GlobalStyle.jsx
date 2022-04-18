@@ -26,6 +26,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+body {
+  background-color: #16161C;
+  font-family: "SpoqaHanSansNeo-Regular", "sans-serif";
+}
 ol, ul {
   list-style: none;
 }
@@ -42,6 +46,7 @@ table {
   border-spacing: 0;
 }
 button {
+  font-family: "SpoqaHanSansNeo-Regular", "sans-serif";
   background: inherit;
   border: none;
 }

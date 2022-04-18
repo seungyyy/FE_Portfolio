@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "SpoqaHanSansNeo-Bold";
+    src: url('./font/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Bold.ttf');
+}
+@font-face {
+    font-family: "SpoqaHanSansNeo-Medium";
+    src: url('./font/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf');
+}
+@font-face {
+    font-family: "SpoqaHanSansNeo-Regular";
+    src: url('./font/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Regular.ttf');
+}
+@font-face {
+    font-family: "SpoqaHanSansNeo-Thin";
+    src: url('./font/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Thin.ttf');
+}
