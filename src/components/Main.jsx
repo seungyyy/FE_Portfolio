@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import theme from '../theme';
 import ModalContact from './ModalContact';
 import LinkButton from './common/LinkButton';
+import { motion } from 'framer-motion';
 
-const Main = () => {
+const Main = ({ isBottom }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,11 +34,19 @@ const Main = () => {
           <LinkButton src={'./images/velog-icon.png'} name="velog" />
         </li>
       </ul>
+      <ImageBox>
+        <img src="./images/Group11.png" alt="img" />
+      </ImageBox>
+      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 1.5 }} onClick={() => {isBottom(true) }} className="arrow-btn">
+        <img src="./images/arrow.png" alt="button" />
+      </motion.button>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
+  position: relative;
+  height: calc(100vh - 273px);
   margin-top: 10rem;
   padding: 2.4rem;
   box-sizing: border-box;
@@ -55,6 +64,15 @@ const Container = styled.div`
   .about-list {
     display: flex;
     align-items: center;
+  }
+  .arrow-btn {
+    width: 65px;
+    position: absolute;
+    bottom: 15%;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    cursor: pointer;
+    object-fit: cover;
   }
 `;
 
@@ -81,5 +99,13 @@ const ContactBtn = styled.button`
     }
   }
 `;
+
+const ImageBox = styled.div`
+  position: absolute;
+  bottom: calc(100% - 695px);
+  right: calc(1000px - 800px);
+  width: 500px;
+`;
+
 
 export default Main;

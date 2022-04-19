@@ -72,7 +72,7 @@ const ModalContact = (props) => {
         );
       }
     },
-    [state.email]
+    [state.email, props]
   );
 
   return (
@@ -141,6 +141,7 @@ const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 100;
 `;
 
 const FormContainer = styled.div`
@@ -152,7 +153,6 @@ const FormContainer = styled.div`
   width: 50%;
   background: ${theme.colors.black};
   text-align: center;
-  z-index: 20;
   box-sizing: border-box;
   border: 3px solid ${theme.colors.white};
   border-radius: 10px;
