@@ -4,9 +4,13 @@ import theme from '../theme';
 import ModalContact from './ModalContact';
 import LinkButton from './common/LinkButton';
 import { motion } from 'framer-motion';
+import { useRecoilState } from 'recoil';
+import { scrollArrowOnOffState } from '../atom/atomState';
 
-const Main = ({ isBottom }) => {
+
+const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isArrow, setIsArrow] = useRecoilState(scrollArrowOnOffState);
 
   return (
     <Container>
@@ -37,7 +41,7 @@ const Main = ({ isBottom }) => {
       <ImageBox>
         <img src="./images/Group11.png" alt="img" />
       </ImageBox>
-      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 1.5 }} onClick={() => {isBottom(true) }} className="arrow-btn">
+      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 1.5 }} onClick={() => {setIsArrow(!isArrow); }} className="arrow-btn">
         <img src="./images/arrow.png" alt="button" />
       </motion.button>
     </Container>

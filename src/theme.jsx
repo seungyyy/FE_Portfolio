@@ -17,6 +17,7 @@ const colors = {
   white: '#fcfff6',
   grey: '#999999',
   blue: '#0052CD',
+  beige: '#ebecf1',
 };
 
 // 자주 사용하는 스타일 속성
