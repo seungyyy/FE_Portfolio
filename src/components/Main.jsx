@@ -87,6 +87,7 @@ const ContactBtn = styled.button`
   font-size: 1rem;
   border-radius: 3px;
   cursor: pointer;
+  box-sizing: border-box;
   background: linear-gradient(-45deg, #fcd900, #eb606e, #0052cd, #5b5cfe);
   animation: gradientBackground 13s ease infinite;
   background-size: 400% 400%;

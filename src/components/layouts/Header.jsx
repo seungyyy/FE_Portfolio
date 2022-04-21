@@ -11,8 +11,8 @@ const Header = () => {
     if (e.target.tagName === 'IMG' || e.target.textContent === 'Home') {
       navigation('/');
       window.location.href = '#';
-    } else if (e.target.textContent === 'Work') {
-      navigation('/work');
+    } else if (e.target.textContent === 'Career/Project') {
+      navigation('/career-project');
     } else if (e.target.textContent === 'Skills') {
       navigation('/skills');
     } else if (e.target.textContent === 'Resume') {
@@ -22,24 +22,23 @@ const Header = () => {
 
   return (
     <Headers>
-      <nav >
+      <nav>
         <div onClick={handleNavigate}>
           <img src="./images/logo.png" alt="logo" className="logo-img" />
         </div>
-        <ul className='nav-list'>
-          <li onClick={handleNavigate} >
+        <ul className="nav-list">
+          <li onClick={handleNavigate}>
             <button>Home</button>
           </li>
-            <li onClick={handleNavigate} >
-              <button>Work</button>
-            </li>
-            <li onClick={handleNavigate}>
-              <button>Skills</button>
-            </li>
-            <li onClick={handleNavigate}>
-              <button>Resume</button>
-            </li>
-          
+          <li onClick={handleNavigate}>
+            <button>Career/Project</button>
+          </li>
+          <li onClick={handleNavigate}>
+            <button>Skills</button>
+          </li>
+          <li onClick={handleNavigate}>
+            <button>Resume</button>
+          </li>
         </ul>
       </nav>
     </Headers>

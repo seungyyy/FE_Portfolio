@@ -11,8 +11,8 @@ const MenuBar = () => {
     if (e.target.tagName === 'IMG' || e.target.textContent === 'Home') {
       navigation('/');
       window.location.href = '#';
-    } else if (e.target.textContent === 'Work') {
-      navigation('/work');
+    } else if (e.target.textContent === 'Career/Project') {
+      navigation('/career-project');
     } else if (e.target.textContent === 'Skills') {
       navigation('/skills');
     } else if (e.target.textContent === 'Resume') {
@@ -40,7 +40,7 @@ const MenuBar = () => {
               <button>Home</button>
             </li>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
-              <button>Work</button>
+              <button>Career/Project</button>
             </li>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
               <button>Skills</button>

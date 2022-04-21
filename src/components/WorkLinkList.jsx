@@ -26,14 +26,14 @@ const WorkLinkList = () => {
 
   const handleClickLinkName = (e) => {
     switch (e.target.textContent) {
-      case 'Portfoilo':
-        return setLink('Portfoilo');
+      case 'Portfolio':
+        return setLink('Portfolio');
       case 'Futurama':
         return setLink('Futurama');
       case '프리온보딩프론트엔드':
         return setLink('발란');
-      case '감귤마켓':
-        return setLink('감귤마켓');
+      case '청귤마켓':
+        return setLink('청귤마켓');
       default:
         return;
     }
@@ -59,7 +59,7 @@ const WorkLinkList = () => {
             onClick={handleClickLinkName}
             className="pinned-ani"
           >
-            <p>Portfoilo</p>
+            <p>Portfolio</p>
             <span>Personal</span>
           </motion.li>
           <motion.li
@@ -92,7 +92,7 @@ const WorkLinkList = () => {
             onClick={handleClickLinkName}
             className="pinned-ani"
           >
-            <p>감귤마켓</p>
+            <p>청귤마켓</p>
             <span>Team</span>
           </motion.li>
         </ul>

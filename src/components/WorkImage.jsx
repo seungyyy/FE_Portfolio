@@ -2,29 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { linkNameState } from '../atom/atomState';
 import styled from 'styled-components';
-
-const linkList = [
-  {
-    name: 'Portfoilo',
-    url: 'https://github.com/seungyyy',
-    img: './images/arrow-left.png',
-  },
-  {
-    name: 'Futurama',
-    url: 'https://futurama-com.vercel.app/',
-    img: './images/link-futurama.png',
-  },
-  {
-    name: '발란',
-    url: 'https://wanted-codestates-project-9-seungyyy.vercel.app/',
-    img: './images/link-wanted.png',
-  },
-  {
-    name: '감귤마켓',
-    url: 'http://chungyul.shop/',
-    img: './images/link-snsproject.png',
-  },
-];
+import { linkList } from '../data/data'; 
 
 const WorkImage = () => {
   const link = useRecoilValue(linkNameState);
