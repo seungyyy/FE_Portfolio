@@ -1,19 +1,22 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Main from '../components/Main';
 import styled from 'styled-components';
 import WorkLinkList from '../components/WorkLinkList';
 import WorkImage from '../components/WorkImage';
 import { useRecoilState } from 'recoil';
-import { scrollArrowOnOffState } from '../atom/atomState';
+import { scrollArrowOnOffState} from '../atom/atomState';
 import Header from '../components/layouts/Header';
-
+import MenuBar from '../components/layouts/MenuBar';
+import theme from '../theme';
 
 const Home = () => {
   const scrollRef = useRef();
   const [isBottom, setIsBottom] = useRecoilState(scrollArrowOnOffState);
+  const [nextState, setNextState] = useState(false);
 
   useEffect(() => {
     if (isBottom) {
+      setNextState(true);
       scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsBottom(!isBottom);
       return;
@@ -23,21 +26,22 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <Main />
-      <Div ref={scrollRef}>
-        <Header />
+      {nextState && <Div ref={scrollRef}>
+        <MenuBar />
         <section>
           <WorkImage />
           <WorkLinkList />
         </section>
-      </Div>
+      </Div>}
     </>
   );
 }
 
 const Div = styled.div`
   section {
-    height: calc(100vh - 6.8rem);
+    ${theme.common.height}
     display: flex;
     align-items: flex-end;
     &:after {

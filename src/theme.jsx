@@ -22,7 +22,7 @@ const colors = {
 
 // 자주 사용하는 스타일 속성
 const common = {
- 
+  height: `height: calc(100vh - 6.8rem);`,
 };
 
 const theme = {

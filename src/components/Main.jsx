@@ -41,7 +41,7 @@ const Main = () => {
       <ImageBox>
         <img src="./images/Group11.png" alt="img" />
       </ImageBox>
-      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 1.5 }} onClick={() => {setIsArrow(!isArrow); }} className="arrow-btn">
+      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 2 }} onClick={() => {setIsArrow(!isArrow); }} className="arrow-btn">
         <img src="./images/arrow.png" alt="button" />
       </motion.button>
     </Container>
@@ -50,9 +50,8 @@ const Main = () => {
 
 const Container = styled.div`
   position: relative;
-  height: calc(100vh - 273px);
-  margin-top: 10rem;
-  padding: 2.4rem;
+  ${theme.common.height}
+  padding: 15rem 2.4rem 2.4rem;
   box-sizing: border-box;
   .main-tit {
     font-size: 3rem;
@@ -106,7 +105,7 @@ const ContactBtn = styled.button`
 
 const ImageBox = styled.div`
   position: absolute;
-  bottom: calc(100% - 695px);
+  bottom: calc(100% - 965px);
   right: calc(1000px - 800px);
   width: 500px;
 `;

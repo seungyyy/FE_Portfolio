@@ -1,20 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../../theme';
+import { useNavigate } from 'react-router-dom';
+
 
 const Header = () => {
+  const navigation = useNavigate();
+
+  const handleNavigate = (e) => { 
+    if (e.target.tagName === 'IMG' || e.target.textContent === 'Home') {
+      navigation('/');
+      window.location.href = '#';
+    } else if (e.target.textContent === 'Work') {
+      navigation('/work');
+    } else if (e.target.textContent === 'Skills') {
+      navigation('/skills');
+    } else if (e.target.textContent === 'Resume') {
+      console.log('resume');
+    }
+  }
+
   return (
     <Headers>
-      <nav>
-        <div>
-          <img src='./images/logo.png' alt='logo' className="logo-img"/>
-          <></>
+      <nav >
+        <div onClick={handleNavigate}>
+          <img src="./images/logo.png" alt="logo" className="logo-img" />
         </div>
-        <ul className="nav-list">
-          <li><button>Home</button></li>
-          <li><button>Works</button></li>
-          <li><button>Skills</button></li>
-          <li><button>Resume</button></li>
+        <ul className='nav-list'>
+          <li onClick={handleNavigate} >
+            <button>Home</button>
+          </li>
+            <li onClick={handleNavigate} >
+              <button>Work</button>
+            </li>
+            <li onClick={handleNavigate}>
+              <button>Skills</button>
+            </li>
+            <li onClick={handleNavigate}>
+              <button>Resume</button>
+            </li>
+          
         </ul>
       </nav>
     </Headers>
@@ -22,7 +47,7 @@ const Header = () => {
 }
 
 const Headers = styled.header`
-  padding: 2.4rem;
+  padding: 2.4rem 3rem;
   box-sizing: border-box;
   nav {
     display: flex;
