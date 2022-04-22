@@ -193,6 +193,7 @@ const ContentContainer = styled.li`
     li {
       margin-left: 2rem;
       list-style: circle;
+      line-height: 1.5;
     }
   }
 `;

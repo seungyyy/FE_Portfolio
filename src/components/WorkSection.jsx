@@ -68,7 +68,7 @@ const WorkSection = () => {
             className={isChoice.isTeam ? 'hidden' : ''}
           />
           <h2 className={isChoice.isTeam ? 'title-smail' : 'title'}>Team</h2>
-          {!isChoice.isTeam && <TeamListContainer />}
+          {isChoice.isTeam && <TeamListContainer />}
         </motion.article>
       </article>
       <article className="carrer-article">
