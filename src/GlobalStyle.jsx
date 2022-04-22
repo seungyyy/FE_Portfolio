@@ -59,6 +59,10 @@ img {
   width: 100%;
   vertical-align: top;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 `;
 
 export default GlobalStyle;

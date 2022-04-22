@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import theme from '../theme';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import CareerListContainer from './CareerListContainer';
+import TeamListContainer from './TeamListContainer';
+import PersonalListContainer from './PersonalListContainer';
 
 const WorkSection = () => {
   const [isChoice, setIsChoice] = useState({
@@ -29,7 +32,7 @@ const WorkSection = () => {
       });
     }
   }
-  console.log(isChoice)
+
   return (
     <Section>
       <article className="">
@@ -48,7 +51,7 @@ const WorkSection = () => {
             className={isChoice.isPersonal ? 'hidden' : ''}
           />
           <h2 className={isChoice.isPersonal ? 'title-smail' : 'title'}>Personal</h2>
-          {isChoice.isPersonal && <ul className="">Personal</ul>}
+          {isChoice.isPersonal && <PersonalListContainer />}
         </motion.article>
         <motion.article
           onClick={handleClickArticle}
@@ -65,7 +68,7 @@ const WorkSection = () => {
             className={isChoice.isTeam ? 'hidden' : ''}
           />
           <h2 className={isChoice.isTeam ? 'title-smail' : 'title'}>Team</h2>
-          {!isChoice.isTeam && <div className=""></div>}
+          {!isChoice.isTeam && <TeamListContainer />}
         </motion.article>
       </article>
       <article className="carrer-article">
@@ -84,12 +87,7 @@ const WorkSection = () => {
             className={isChoice.isCareer ? 'hidden' : ''}
           />
           <h2 className={isChoice.isCareer ? 'title-smail' : 'title'}>Career</h2>
-          {isChoice.isCareer &&
-            <ul className="">
-              <li>
-              </li>
-            </ul>
-          }
+          {isChoice.isCareer && <CareerListContainer />}
         </motion.article>
       </article>
     </Section>
@@ -136,10 +134,13 @@ const Section = styled.section`
       display: none;
     }
     .title-smail {
+      flex: none;
+      margin-right: auto;
       font-size: 2rem;
       text-shadow: none;
-      padding-bottom: .3rem;
-      border-bottom: 3px solid ${theme.colors.white};
+      padding: 1.5rem 0 .3rem 3rem;
+      border-bottom: 3px solid ${theme.colors.black};
+      color: ${theme.colors.black};
       box-sizing: border-box;
     }
   }
