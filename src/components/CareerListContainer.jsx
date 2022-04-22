@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import theme from '../theme';
-import { FaGithub, FaLink } from 'react-icons/fa';
+import { FaGithub, FaLink, FaDiaspora } from 'react-icons/fa';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -14,6 +14,22 @@ const CareerListContainer = () => {
   return (
     <Container>
       <Swiper className="personal-list" spaceBetween={50} slidesPerView={1} navigation pagination={{ clickable: true }}>
+        <SwiperSlide>
+          <ContentContainer>
+            <img src="./images/wanted-logo.png" alt="" className="describe-img" />
+            <Describe>
+              <p>
+                원티드 채용 플랫폼에서 진행한 'Pre-Onboarding Course frontend' 입니다. <br />
+                단기간에 참가 기업의 실전 과제를 팀 과제 8개와 개인 과제 1개를 수행합니다. <br />
+                모의 면접과 필요한 지식을 더 쌓으며 역량이 향상될 수 있었습니다. <br />
+              </p>
+              <FaDiaspora />
+              <span>
+                프로젝트별 슬라이드에서 참여율 / 역할 / 스택/ 깃헙 / 링크를 확인할 수 있습니다.
+              </span>
+            </Describe>
+          </ContentContainer>
+        </SwiperSlide>
         <SwiperSlide>
           <ContentContainer>
             <img src="./images/wanted-logo.png" alt="" />
@@ -48,7 +64,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>로컬스토리지 데이터 조회 및 정보 검색 필터 적용</li>
                 <li>로컬 스토리지 저장 데이터 없을 시 화면 구현</li>
@@ -97,7 +113,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>recoil 상태 변경/적용</li>
                 <li>설정 메뉴 컴포넌트 생성</li>
@@ -146,7 +162,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>리덕스 툴킷 데이터 관리</li>
                 <li>RTK Query로 비동기 처리</li>
@@ -196,7 +212,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>vue-chart.js 라이브러리를 이용하여 펜타곤 그래프 커스텀 하여 구현</li>
                 <li>서비스 배포</li>
@@ -244,7 +260,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>
                   크로스 브라우징 (메타태그, css reset 초기화, css vender prefix, <br /> react-app-polyfill 사용하여
@@ -295,7 +311,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>공통 UI 컴포넌트 item 제작</li>
                 <li>서비스 배포</li>
@@ -343,7 +359,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>유저 프로필 컴포넌트 구현(css 애니메이션 3개, 모달창 구현)</li>
                 <li>서비스 배포</li>
@@ -394,7 +410,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>저장된 데이터 페이지 컴포넌트 생성</li>
                 <li>서비스 배포</li>
@@ -442,7 +458,7 @@ const CareerListContainer = () => {
                   />
                 </Link>
               </Title>
-              <SubMenu>구현 기능/역할</SubMenu>
+              <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>리덕스에서 데이터를 받아와서 신청 완료 페이지 화면 구현</li>
                 <li>서비스 배포</li>
@@ -463,22 +479,23 @@ const CareerListContainer = () => {
 
 const Container = styled.div`
   max-width: 1100px;
+  .describe-img {
+    margin-top: 6rem;
+    margin-right: 50px ;
+  } 
   .swiper-button-next {
     transform: rotate(270deg) translateX(50%);
     background-size: 50% auto;
     background: url('./images/svg/line-angle-down.svg') no-repeat center;
   }
-
   .swiper-button-prev {
     transform: rotate(90deg) translateX(-50%);
     background: url('./images/svg/line-angle-down.svg') no-repeat center;
   }
-
   .swiper-button-next::after,
   .swiper-button-prev::after {
     display: none;
   }
-
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
@@ -560,5 +577,16 @@ const SubMenu = styled.p`
   font-size: 1.2rem;
   margin: 1rem 1rem 0.2rem 0;
   font-family: 'SpoqaHanSansNeo-Medium';
+`;
+
+const Describe = styled.div`
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 50px 0 15px;
+  }
+  span {
+    margin-left: 5px;
+  }
 `;
 export default CareerListContainer;

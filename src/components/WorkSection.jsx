@@ -15,16 +15,31 @@ const WorkSection = () => {
 
   const handleClickArticle = (e) => { 
     e.preventDefault();
+    
     if (e.target.id === 'personal' || e.target.alt === '개인 작업 이미지' || e.target.textContent === 'Personal') {
       setIsChoice({
         ...isChoice,
         isPersonal: true,
       });
+      if (isChoice.isCareer === true || isChoice.isTeam === true) {
+        setIsChoice({
+          isPersonal: true,
+          isTeam: false,
+          isCareer: false,
+        });
+      }
     } else if (e.target.id === 'team' || e.target.alt === '팀 작업 이미지' || e.target.textContent === 'Team') {
       setIsChoice({
         ...isChoice,
         isTeam: true,
       });
+      if (isChoice.isPersonal === true || isChoice.isCareer === true) {
+        setIsChoice({
+          isTeam: true,
+          isPersonal: false,
+          isCareer: false,
+        });
+      }
     } else if (e.target.id === 'career' || e.target.alt === '업무 이미지' || e.target.textContent === 'Career') {
       setIsChoice({
         ...isChoice,
@@ -42,7 +57,7 @@ const WorkSection = () => {
           initial={{ x: '-100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2 }}
-          className="personal-article project-article"
+          className={"personal-article project-article" + `${isChoice.isTeam ? ' personal-article-sm' : ''}`}
         >
           <img
             src="./images/Saly-12.png"
@@ -59,7 +74,7 @@ const WorkSection = () => {
           initial={{ x: '-100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2 }}
-          className="team-article project-article"
+          className={'team-article project-article' + `${isChoice.isPersonal ? ' team-article-sm' : ''}`}
         >
           <img
             src="./images/Saly-31.png"
@@ -138,7 +153,7 @@ const Section = styled.section`
       margin-right: auto;
       font-size: 2rem;
       text-shadow: none;
-      padding: 1.5rem 0 .3rem 3rem;
+      padding: 1.5rem 0 0.3rem 3rem;
       border-bottom: 3px solid ${theme.colors.black};
       color: ${theme.colors.black};
       box-sizing: border-box;
@@ -149,6 +164,14 @@ const Section = styled.section`
   }
   .team-article {
     background-color: #827ed8;
+  }
+  .team-article-sm,
+  .personal-article-sm {
+    width: 53%;
+    object-fit: cover;
+    h2 {
+      font-size: 6rem;
+    }
   }
   .career-article {
     margin: -0.5rem 3rem 0 0;
