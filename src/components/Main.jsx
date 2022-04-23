@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 import ModalContact from './ModalContact';
@@ -11,11 +11,27 @@ import { FaAngleDown } from 'react-icons/fa';
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isArrow, setIsArrow] = useRecoilState(scrollArrowOnOffState);
+  const [text, setText] = useState('');
+  const [count, setCount] = useState(0);
+
+  const txt = "Hello, I'm an Front-end Developer.";
+ 
+  
+  useEffect(() => { 
+    const interval = setInterval(() => {
+      setText(text + txt[count]);
+      setCount(count + 1)
+    }, 150);
+    if (count === txt.length) { 
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  })
 
   return (
     <Container>
       {isOpen && <ModalContact isOpen={setIsOpen} />}
-      <h1 className="main-tit">Hello, I'm an Front-end Developer.</h1>
+      <h1 className="main-tit">{text}</h1>
       <p className="main-txt">
         안녕하세요. 프론트엔드 개발자 이승연입니다. <br />
         배포를 통한 사용자 피드백과 비즈니스적 관점에서 고객 UI/UX에 대해 한번 더 생각하는 개발자입니다. <br />
@@ -39,7 +55,7 @@ const Main = () => {
         </li>
       </ul>
       <ImageBox>
-        <img src="./images/Group11.png" alt="img" />
+        <img src="./images/main-img.png" alt="img" />
       </ImageBox>
       <motion.button
         animate={{ y: 60 }}
@@ -49,7 +65,7 @@ const Main = () => {
         }}
         className="arrow-btn"
       >
-        <FaAngleDown color="#fcfff6" size={70}/>
+        <FaAngleDown color="#fcfff6" size={70} />
       </motion.button>
     </Container>
   );
@@ -113,7 +129,7 @@ const ContactBtn = styled.button`
 
 const ImageBox = styled.div`
   position: absolute;
-  bottom: calc(100% - 961px);
+  bottom: calc(100% - 850px);
   right: calc(1000px - 800px);
   width: 500px;
 `;
