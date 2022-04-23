@@ -3,11 +3,11 @@ import { useRecoilValue } from 'recoil';
 import { linkNameState } from '../atom/atomState';
 import styled from 'styled-components';
 
-export const linkList = [
+const linkList = [
   {
-    name: 'Portfoilo',
-    url: 'https://github.com/seungyyy',
-    img: './images/arrow-left.png',
+    name: 'Portfolio',
+    url: 'https://github.com/seungyyy/FE_Portfolio',
+    img: './images/link-portfolio.png',
   },
   {
     name: 'Futurama',
@@ -47,7 +47,7 @@ const PinnedImage = () => {
       setIsOn(true);
       setTimeout(() => {
         setIsOn(false);
-      }, 1000);
+      }, 100);
     }
   }, [link]);
 

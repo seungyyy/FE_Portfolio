@@ -15,9 +15,7 @@ const Header = () => {
       navigation('/career-project');
     } else if (e.target.textContent === 'Skills') {
       navigation('/skills');
-    } else if (e.target.textContent === 'Resume') {
-      console.log('resume');
-    }
+    } 
   }
 
   return (
@@ -35,9 +33,6 @@ const Header = () => {
           </li>
           <li onClick={handleNavigate}>
             <button>Skills</button>
-          </li>
-          <li onClick={handleNavigate}>
-            <button>Resume</button>
           </li>
         </ul>
       </nav>

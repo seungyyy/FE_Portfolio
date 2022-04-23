@@ -44,7 +44,7 @@ const PinnedLinkList = () => {
         <ul>
           <motion.li
             layout
-            initial={{ opacity: 0, y: '-140%' }}
+            initial={{ opacity: 0, y: '-150%' }}
             animate={{ opacity: 1, y: '0' }}
             transition={{ duration: 1.5, delay: 2 }}
           >

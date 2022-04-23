@@ -16,9 +16,7 @@ const MenuBar = () => {
       navigation('/career-project');
     } else if (e.target.textContent === 'Skills') {
       navigation('/skills');
-    } else if (e.target.textContent === 'Resume') {
-      console.log('resume');
-    }
+    } 
   };
 
   return (
@@ -45,9 +43,6 @@ const MenuBar = () => {
             </li>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
               <button>Skills</button>
-            </li>
-            <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
-              <button>Resume</button>
             </li>
           </ul>
         </div>

@@ -108,13 +108,13 @@ const PersonalListContainer = () => {
         </SwiperSlide>
         <SwiperSlide>
           <ContentContainer>
-            <img src="./images/link-wanted.png" alt="개인프로젝트이미지" />
+            <img src="./images/link-portfolio.png" alt="개인프로젝트이미지" />
             <Content>
               <Title>
                 <h3>개인 포트폴리오 웹페이지</h3>
                 <span className="date-text">2022.04.17 - 2022.04.22</span>
                 <p>
-                  <span>Description</span>원티드 프리온보딩 프론트엔드 코스에서 진행한 개인 프로젝트입니다.
+                  <span>Description</span>react를 사용하여 포트폴리오를 만들었습니다.
                 </p>
                 <GitLink href="https://github.com/seungyyy/FE_Portfolio">
                   <FaGithub
@@ -123,24 +123,25 @@ const PersonalListContainer = () => {
                     }}
                   />
                 </GitLink>
-                <Link href="#">
+                <Link href="https://seungyeon-portfolio.vercel.app/">
                   <FaLink
                     onClick={() => {
-                      window.open('#', '_blank', 'noopener noreferrer');
+                      window.open('https://seungyeon-portfolio.vercel.app/', '_blank', 'noopener noreferrer');
                     }}
                   />
                 </Link>
               </Title>
               <SubMenu>구현 기능</SubMenu>
               <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>recoil를 사용하여 전역에서 필요한 상태를 효율적으로 관리</li>
+                <li>메인에서 버튼 클릭시 scrollIntoView를 사용하여 아래로 이동 구현</li>
+                <li>emailjs를 사용해 메일 보내기 구현</li>
               </ul>
               <SubMenu>스택</SubMenu>
               <ul>
                 <li>react</li>
                 <li>recoil</li>
+                <li>swiper</li>
                 <li>react-router</li>
                 <li>styled-components</li>
               </ul>
