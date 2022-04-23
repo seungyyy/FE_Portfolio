@@ -73,9 +73,11 @@ const Headers = styled.header`
   }
   .menu-hidden {
     display: none;
-  } 
+  }
   button {
     color: ${theme.colors.white};
+    font-size: 1.4rem;
+    line-height: 1.5;
     cursor: pointer;
   }
   .menu-column {

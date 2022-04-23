@@ -15,7 +15,7 @@ const device = {
 const colors = {
   black: '#212121',
   white: '#fcfff6',
-  grey: '#999999',
+  mauve: '#E1E0E8',
   blue: '#0052CD',
   beige: '#ebecf1',
 };
