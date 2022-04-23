@@ -57,7 +57,7 @@ const WorkSection = () => {
           initial={{ x: '-100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2 }}
-          className={"personal-article project-article" + `${isChoice.isTeam ? ' personal-article-sm' : ''}`}
+          className={`${'personal-article project-article' + isChoice.isTeam ? 'personal-article-sm' : ''}`}
         >
           <img
             src="./images/Saly-12.png"
@@ -74,7 +74,7 @@ const WorkSection = () => {
           initial={{ x: '-100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2 }}
-          className={'team-article project-article' + `${isChoice.isPersonal ? ' team-article-sm' : ''}`}
+          className={`${'team-article project-article' + isChoice.isPersonal ? ' team-article-sm' : '' }`}
         >
           <img
             src="./images/Saly-31.png"

@@ -6,7 +6,7 @@ import LinkButton from './common/LinkButton';
 import { motion } from 'framer-motion';
 import { useRecoilState } from 'recoil';
 import { scrollArrowOnOffState } from '../atom/atomState';
-
+import { FaAngleDown } from 'react-icons/fa';
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,8 +41,15 @@ const Main = () => {
       <ImageBox>
         <img src="./images/Group11.png" alt="img" />
       </ImageBox>
-      <motion.button animate={{ y: 70 }} transition={{ repeat: Infinity, duration: 2 }} onClick={() => {setIsArrow(!isArrow); }} className="arrow-btn">
-        <img src="./images/arrow.png" alt="button" />
+      <motion.button
+        animate={{ y: 60 }}
+        transition={{ repeat: Infinity, duration: 2.5 }}
+        onClick={() => {
+          setIsArrow(!isArrow);
+        }}
+        className="arrow-btn"
+      >
+        <FaAngleDown color="#fcfff6" size={70}/>
       </motion.button>
     </Container>
   );
@@ -69,13 +76,13 @@ const Container = styled.div`
     align-items: center;
   }
   .arrow-btn {
-    width: 65px;
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     transform: translate(-50%, 0%);
     left: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
     cursor: pointer;
-    object-fit: cover;
   }
 `;
 
@@ -106,7 +113,7 @@ const ContactBtn = styled.button`
 
 const ImageBox = styled.div`
   position: absolute;
-  bottom: calc(100% - 965px);
+  bottom: calc(100% - 961px);
   right: calc(1000px - 800px);
   width: 500px;
 `;

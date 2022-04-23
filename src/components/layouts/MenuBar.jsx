@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../../theme';
 import { useNavigate } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
 
 const MenuBar = () => {
   const navigation = useNavigate();
@@ -33,7 +34,7 @@ const MenuBar = () => {
             }}
             className="menu-bar"
           >
-            <img src="./images/icon-menu-bar.png" alt="메뉴바" />
+            <FaBars size={35} />
           </button>
           <ul className={isMenu ? 'nav-column-list' : 'nav-list'}>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
@@ -75,7 +76,6 @@ const Headers = styled.header`
   } 
   button {
     color: ${theme.colors.white};
-    font-size: 1.4rem;
     cursor: pointer;
   }
   .menu-column {

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { scrollArrowOnOffState, linkNameState } from '../atom/atomState';
 
-const WorkLinkList = () => {
+const PinnedLinkList = () => {
   const isOn = useRecoilValue(scrollArrowOnOffState);
   const [, setLink] = useRecoilState(linkNameState);
   const [isList, setIsList] = useState(false);
@@ -13,15 +13,15 @@ const WorkLinkList = () => {
   useEffect(() => {
     if (isOn) {
       if (isList === false) {
-        setIsList(!isList)
-      } else { 
-        setIsList(isList)
-        setIsList(!isList)
+        setIsList(!isList);
+      } else {
+        setIsList(isList);
+        setIsList(!isList);
         setTimeout(() => {
-          setIsList(true)
-        }, 800)
+          setIsList(true);
+        }, 800);
       }
-      }
+    }
   }, [isOn, isList]);
 
   const handleClickLinkName = (e) => {
@@ -61,6 +61,7 @@ const WorkLinkList = () => {
           >
             <p>Portfolio</p>
             <span>Personal</span>
+            <img src="./images/svg/angle-double-left.svg" alt="" />
           </motion.li>
           <motion.li
             layout
@@ -72,6 +73,7 @@ const WorkLinkList = () => {
           >
             <p>Futurama</p>
             <span>Personal</span>
+            <img src="./images/svg/angle-double-left.svg" alt="" />
           </motion.li>
           <motion.li
             layout
@@ -83,6 +85,7 @@ const WorkLinkList = () => {
           >
             <p>프리온보딩프론트엔드</p>
             <span>Personal</span>
+            <img src="./images/svg/angle-double-left.svg" alt="" />
           </motion.li>
           <motion.li
             layout
@@ -94,6 +97,7 @@ const WorkLinkList = () => {
           >
             <p>청귤마켓</p>
             <span>Team</span>
+            <img src="./images/svg/angle-double-left.svg" alt="" />
           </motion.li>
         </ul>
       )}
@@ -105,12 +109,13 @@ const Container = styled.div`
   float: left;
   margin-bottom: 12%;
   li {
-    width: 140%;
-    padding: 2rem 1rem 1rem 3rem;
+    width: 150%;
+    padding: 2rem 2rem 2rem 3rem;
     border-bottom: 2px solid ${theme.colors.white};
     color: ${theme.colors.white};
     overflow: auto;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    box-sizing: border-box;
     cursor: pointer;
     .pinned-title {
       float: left;
@@ -122,17 +127,25 @@ const Container = styled.div`
       font-size: 1rem;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       float: left;
     }
   }
   .pinned-ani {
-    transition: all 0.5s;
+    position: relative;
     &:hover {
-      background: url('./images/arrow-left.png') no-repeat left 5px bottom 20px;
-      background-size: 16px contain;
+      img {
+        opacity: 1;
+      }
+    }
+    img {
+      position: absolute;
+      width: 50px;
+      left: 0;
+      top: 20%;
+      opacity: 0;
     }
   }
 `;
 
-export default WorkLinkList;
+export default PinnedLinkList;

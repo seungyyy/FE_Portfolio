@@ -26,31 +26,29 @@ export const linkList = [
   },
 ];
 
-const WorkImage = () => {
+const PinnedImage = () => {
   const link = useRecoilValue(linkNameState);
   const [isOn, setIsOn] = useState(false);
   const [state, setState] = useState({
     img: '',
     url: '',
-  })
+  });
 
   useEffect(() => {
     let text = '';
-    if (link.length > 0) { 
+    if (link.length > 0) {
       setState({
         url: linkList.filter((el) => el.name === link)[0].url,
         img: linkList.filter((el) => el.name === link)[0].img,
       });
-      
     }
-    if (text !== link) { 
+    if (text !== link) {
       text = link;
       setIsOn(true);
       setTimeout(() => {
         setIsOn(false);
       }, 1000);
     }
-    
   }, [link]);
 
   return (
@@ -60,10 +58,10 @@ const WorkImage = () => {
       }}
     >
       {!state.img && <img src="./images/img-substitute.png" alt="대체 이미지" className="sub-img" />}
-      {state.img && <img src={state.img} alt="링크 이미지" data-ison={isOn}  />}
+      {state.img && <img src={state.img} alt="링크 이미지" data-ison={isOn} />}
     </ImgContainer>
   );
-}
+};
 
 const ImgContainer = styled.div`
   float: left;
@@ -97,4 +95,4 @@ const ImgContainer = styled.div`
   
 `;
 
-export default WorkImage;
+export default PinnedImage;

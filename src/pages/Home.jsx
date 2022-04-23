@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Main from '../components/Main';
 import styled from 'styled-components';
-import WorkLinkList from '../components/WorkLinkList';
-import WorkImage from '../components/WorkImage';
+import PinnedLinkList from '../components/PinnedLinkList';
+import PinnedImage from '../components/PinnedImage';
 import { useRecoilState } from 'recoil';
 import { scrollArrowOnOffState} from '../atom/atomState';
 import Header from '../components/layouts/Header';
@@ -19,10 +19,8 @@ const Home = () => {
       setNextState(true);
       scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsBottom(!isBottom);
-      return;
     }
   }, [isBottom, setIsBottom]);
-  
 
   return (
     <>
@@ -31,8 +29,8 @@ const Home = () => {
       {nextState && <Div ref={scrollRef}>
         <MenuBar />
         <section>
-          <WorkImage />
-          <WorkLinkList />
+          <PinnedImage />
+          <PinnedLinkList />
         </section>
       </Div>}
     </>
