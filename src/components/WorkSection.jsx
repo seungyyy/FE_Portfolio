@@ -45,6 +45,13 @@ const WorkSection = () => {
         ...isChoice,
         isCareer: true,
       });
+      if (isChoice.isPersonal === true || isChoice.isTeam === true) {
+        setIsChoice({
+          isCareer: true,
+          isTeam: false,
+          isPersonal: false,
+        });
+      }
     }
   }
 
@@ -173,10 +180,10 @@ const Section = styled.section`
   }
   .team-article-sm,
   .personal-article-sm {
-    width: 53%;
+    width: 35%;
     object-fit: cover;
     h2 {
-      font-size: 6rem;
+      font-size: 5rem;
     }
   }
   .career-article {

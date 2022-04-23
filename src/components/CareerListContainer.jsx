@@ -24,9 +24,7 @@ const CareerListContainer = () => {
                 모의 면접과 필요한 지식을 더 쌓으며 역량이 향상될 수 있었습니다. <br />
               </p>
               <FaDiaspora />
-              <span>
-                프로젝트별 슬라이드에서 참여율 / 역할 / 스택/ 깃헙 / 링크를 확인할 수 있습니다.
-              </span>
+              <span>프로젝트별 슬라이드에서 참여율 / 역할 / 스택/ 깃헙 / 링크를 확인할 수 있습니다.</span>
             </Describe>
           </ContentContainer>
         </SwiperSlide>
@@ -116,7 +114,7 @@ const CareerListContainer = () => {
               <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>recoil 상태 변경/적용</li>
-                <li>설정 메뉴 컴포넌트 생성</li>
+                <li>설정 메뉴 컴포넌트 구현</li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>
@@ -165,7 +163,7 @@ const CareerListContainer = () => {
               <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>리덕스 툴킷 데이터 관리</li>
-                <li>RTK Query로 비동기 처리</li>
+                <li>RTK Query로 비동기 처리 api 호출 시 빈값일 때 호출하지 않도록 skip으로 처리</li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>
@@ -412,12 +410,13 @@ const CareerListContainer = () => {
               </Title>
               <SubMenu>기능/역할</SubMenu>
               <ul>
-                <li>저장된 데이터 페이지 컴포넌트 생성</li>
+                <li>신청 완료 페이지 리덕스 데이터 받아와서 화면 구현</li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>
               <ul>
                 <li>react</li>
+                <li>redux</li>
                 <li>react-router</li>
                 <li>styled-components</li>
               </ul>
@@ -429,7 +428,7 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
-                <h3>커스텀 폼 생성 및 저장하기</h3>
+                <h3>커스텀 폼 생성 및 저장할 수 있는 웹 페이지</h3>
                 <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
                 <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
@@ -460,7 +459,7 @@ const CareerListContainer = () => {
               </Title>
               <SubMenu>기능/역할</SubMenu>
               <ul>
-                <li>리덕스에서 데이터를 받아와서 신청 완료 페이지 화면 구현</li>
+                <li>저장된 폼 화면 공통 컴포넌트 UI 구현</li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>

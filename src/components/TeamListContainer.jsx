@@ -10,8 +10,11 @@ const TeamListContainer = () => {
       <img src="./images/link-snsproject.png" alt="팀프로젝트이미지" />
       <Content>
         <Title>
-          <h3>청귤마켓</h3>
           <span className="date-text">2022.01.03 - 2022.01.18</span>
+          <h3>청귤마켓</h3>
+          <p className="deploy-text">
+            <span>참여율</span>35% (팀 인원: 3명) <span>배포</span> gabia
+          </p>
           <p>
             <span className="description">Description</span>멋쟁이 사자처럼 프론트엔드 스쿨에서 진행한 팀 프로젝트,
             <br />
@@ -41,6 +44,7 @@ const TeamListContainer = () => {
         </Title>
         <SubMenu>구현 기능</SubMenu>
         <ul>
+          <li>서버 api를 활용해 서버에서 데이터 연결 및 전송</li>
           <li>로그인, 프로필(및 수정), 상품등록 페이지 유효성 검사 및 계정 ID 중복 검사</li>
           <li>회원 가입 시 토큰이 없어 문제가 발생하여 유저 데이터로 가입과 로그인을 같이 하게 구현</li>
           <li>검색 필터로 해당 단어의 유저만 검색되고 텍스트 하이라이트 표시</li>
@@ -104,6 +108,13 @@ const Title = styled.div`
     .description {
       float: left;
     }
+  }
+  .deploy-text {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    font-size: 1rem;
+    margin-right: .5rem;
   }
 `;
 
