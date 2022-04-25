@@ -3,36 +3,49 @@ import Main from '../components/Main';
 import styled from 'styled-components';
 import PinnedLinkList from '../components/PinnedLinkList';
 import PinnedImage from '../components/PinnedImage';
-import { useRecoilState } from 'recoil';
-import { scrollArrowOnOffState} from '../atom/atomState';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { scrollArrowOnOffState, scrollContactOnOffState } from '../atom/atomState';
 import Header from '../components/layouts/Header';
 import MenuBar from '../components/layouts/MenuBar';
 import theme from '../theme';
+import ContactContainer from '../components/ContactContainer';
 
 const Home = () => {
   const scrollRef = useRef();
+  const contactRef = useRef();
   const [isBottom, setIsBottom] = useRecoilState(scrollArrowOnOffState);
-  const [nextState, setNextState] = useState(false);
+  const contactValue = useRecoilValue(scrollContactOnOffState);
+  const [state, setState] = useState(false)
+  const [, setIsContanct] = useRecoilState(scrollContactOnOffState);
 
   useEffect(() => {
     if (isBottom) {
-      setNextState(true);
+      setState(true);
       scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsBottom(!isBottom);
+      setIsContanct(true);
     }
-  }, [isBottom, setIsBottom]);
-
+    if (contactValue === true) {
+      setState(true);
+      setIsBottom(true);
+      contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  }, [isBottom, setIsBottom, state, contactValue, setIsContanct]);
+ 
   return (
     <>
       <Header />
       <Main />
-      {nextState && <Div ref={scrollRef}>
-        <MenuBar />
-        <section>
-          <PinnedImage />
-          <PinnedLinkList />
-        </section>
-      </Div>}
+      {state && (
+        <Div ref={scrollRef}>
+          <MenuBar />
+          <section>
+            <PinnedImage />
+            <PinnedLinkList />
+          </section>
+        </Div>
+      )}
+      {contactValue && <ContactContainer forwarRef={contactRef} />}
     </>
   );
 }

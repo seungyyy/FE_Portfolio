@@ -1,36 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
-import ModalContact from './ModalContact';
 import LinkButton from './common/LinkButton';
 import { motion } from 'framer-motion';
 import { useRecoilState } from 'recoil';
-import { scrollArrowOnOffState } from '../atom/atomState';
+import { scrollArrowOnOffState, scrollContactOnOffState } from '../atom/atomState';
 import { FaAngleDown } from 'react-icons/fa';
 
 const Main = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isArrow, setIsArrow] = useRecoilState(scrollArrowOnOffState);
+  const [, setIsContact] = useRecoilState(scrollContactOnOffState);
   const [text, setText] = useState('');
   const [count, setCount] = useState(0);
-
+  
   const txt = "Hello, I'm an Front-end Developer.";
  
-  
   useEffect(() => { 
     const interval = setInterval(() => {
       setText(text + txt[count]);
-      setCount(count + 1)
+      setCount(count + 1);
     }, 150);
-    if (count === txt.length) { 
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
+      if (count === txt.length) {
+        clearInterval(interval);
+      }
+      return () => clearInterval(interval);
   })
 
   return (
     <Container>
-      {isOpen && <ModalContact isOpen={setIsOpen} />}
       <h1 className="main-tit">{text}</h1>
       <p className="main-txt">
         안녕하세요. 프론트엔드 개발자 이승연입니다. <br />
@@ -40,7 +37,7 @@ const Main = () => {
       </p>
       <ContactBtn
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsContact(true);
         }}
         className="contact-btn"
       >
