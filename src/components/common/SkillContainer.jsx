@@ -43,6 +43,11 @@ const Container = styled.article`
     padding: 1.5rem 0 0.3rem 3rem;
     border-bottom: 3px solid ${theme.colors.black};
     color: ${theme.colors.black};
+    box-sizing: border-box;
+    ${theme.device.laptop} {
+      font-size: 1.4rem;
+      padding-left: 1rem;
+    }
   }
   .skill-cont {
     display: grid;
@@ -54,6 +59,19 @@ const Container = styled.article`
       width: 100px;
       aspect-ratio: 1 / 1;
       object-fit: contain;
+    }
+    ${theme.device.laptop} {
+      gap: 2rem;
+    }
+    ${theme.device.custom} {
+      padding: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      img {
+        width: 60%;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
     }
   }
 `;

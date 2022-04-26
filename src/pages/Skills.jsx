@@ -34,6 +34,10 @@ const Container = styled.div`
   ${theme.common.height}
   padding-top: 100px;
   box-sizing: border-box;
+  ${theme.device.laptop} {
+    height: auto;
+    padding-top: 30px;
+  }
 `;
 
 const Content = styled.section`
@@ -76,6 +80,20 @@ const Content = styled.section`
       100% {
         transform: translate(-1200px, 550px) scaleX(-1) rotate(90deg);
       }
+    }
+  }
+  ${theme.device.laptop} {
+    flex-direction: column;
+    gap: 2rem;
+    .flex-cont {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+  ${theme.device.laptop} {
+    .flex-cont {
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 `;

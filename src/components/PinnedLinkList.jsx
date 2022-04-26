@@ -73,7 +73,7 @@ const PinnedLinkList = () => {
           >
             <p>Futurama</p>
             <span>Personal</span>
-            <img src="./images/svg/angle-double-left.svg" alt="" />
+            <img src="./images/svg/angle-double-left.svg" alt="" className="img-hidden" />
           </motion.li>
           <motion.li
             layout
@@ -85,7 +85,7 @@ const PinnedLinkList = () => {
           >
             <p>프리온보딩프론트엔드</p>
             <span>Personal</span>
-            <img src="./images/svg/angle-double-left.svg" alt="" />
+            <img src="./images/svg/angle-double-left.svg" alt="" className="img-hidden" />
           </motion.li>
           <motion.li
             layout
@@ -97,7 +97,7 @@ const PinnedLinkList = () => {
           >
             <p>청귤마켓</p>
             <span>Team</span>
-            <img src="./images/svg/angle-double-left.svg" alt="" />
+            <img src="./images/svg/angle-double-left.svg" alt="" className="img-hidden" />
           </motion.li>
         </ul>
       )}
@@ -114,7 +114,6 @@ const Container = styled.div`
     border-bottom: 2px solid ${theme.colors.white};
     color: ${theme.colors.white};
     overflow: auto;
-    font-size: 1.5rem;
     box-sizing: border-box;
     cursor: pointer;
     .pinned-title {
@@ -144,6 +143,27 @@ const Container = styled.div`
       left: 0;
       top: 20%;
       opacity: 0;
+    }
+  }
+  ${theme.device.tablet} {
+    float: none;
+    li {
+      width: 350px;
+      padding: 1.5rem;
+      .pinned-title {
+        font-size: 1.1rem;
+      }
+      span {
+        font-size: 0.7rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    .pinned-ani {
+      img {
+        display: none;
+      }
     }
   }
 `;

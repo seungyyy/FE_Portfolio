@@ -162,22 +162,37 @@ const Container = styled.div`
     background-size: 50% auto;
     background: url('./images/svg/line-angle-down.svg') no-repeat center;
   }
-
   .swiper-button-prev {
     transform: rotate(90deg) translateX(-50%);
     background: url('./images/svg/line-angle-down.svg') no-repeat center;
   }
-
   .swiper-button-next::after,
   .swiper-button-prev::after {
     display: none;
   }
-
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
     transform: translateY(-250%);
     background-color: ${theme.colors.black};
+  }
+  ${theme.device.laptop} {
+    max-width: 600px;
+    .swiper-button-next {
+      margin-right: -15px;
+      background-size: 80% auto;
+    }
+    .swiper-button-prev {
+      margin-left: -15px;
+      background-size: 80% auto;
+    }
+  }
+  ${theme.device.tablet} {
+    max-width: 500px;
+  }
+  ${theme.device.mobile} {
+    max-width: 350px;
+    min-width: 350px;
   }
 `;
 
@@ -198,9 +213,24 @@ const ContentContainer = styled.li`
       line-height: 1.5;
     }
   }
+  ${theme.device.laptop} {
+    flex-direction: column;
+    padding: 1rem 2rem 2.5rem;
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Content = styled.div`
+  padding-right: 3rem;
+  box-sizing: border-box;
+  ${theme.device.laptop} {
+    padding: 2rem;
+  }
+  ${theme.device.custom} {
+    padding-top: 0;
+  }
 `;
 
 const Title = styled.div`
@@ -223,28 +253,62 @@ const Title = styled.div`
       margin-right: 1rem;
     }
   }
+  ${theme.device.laptop} {
+    h3 {
+      font-size: 1.4rem;
+    }
+    .date-text {
+      font-size: 14px;
+      top: -20px;
+    }
+    p {
+      span {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  ${theme.device.tablet} {
+    max-width: 500px;
+  }
+  ${theme.device.custom} {
+    p {
+      font-size: 16px;
+      span {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+  }
 `;
 
 const GitLink = styled.a`
   position: absolute;
   top: 0.5rem;
   right: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 100;
+  ${theme.device.custom} {
+    top: -1.5rem;
+  }
 `;
 
 const Link = styled.a`
   position: absolute;
   top: 0.5rem;
   right: -1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 100;
+  ${theme.device.custom} {
+    top: -1.5rem;
+  }
 `;
 
 const SubMenu = styled.p`
   font-size: 1.2rem;
-  margin: 1rem 1rem .2rem 0;
+  margin: 1rem 1rem 0.2rem 0;
   font-family: 'SpoqaHanSansNeo-Medium';
-
+  ${theme.device.tablet} {
+    font-size: 16px;
+  }
 `;
 export default PersonalListContainer;

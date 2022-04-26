@@ -137,12 +137,17 @@ const Container = styled.div`
   height: 100vh;
   h2 {
     margin: 5rem 2.4rem 2.4rem;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     font-size: 3rem;
     font-weight: bold;
     box-sizing: border-box;
     color: ${theme.colors.white};
     border-bottom: 1px solid ${theme.colors.white};
+  }
+  ${theme.device.tablet} {
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -157,6 +162,14 @@ const Content = styled.section`
     font-size: 1.4rem;
     span {
       margin-right: 20px;
+    }
+  }
+  ${theme.device.tablet} {
+    flex-direction: column;
+    padding-top: 0;
+    p {
+      margin: 0;
+      font-size: 1rem;
     }
   }
 `;
@@ -204,12 +217,29 @@ const Form = styled.form`
   .submit-btn {
     display: block;
     width: 85%;
-    margin: 40px  0 0 64px;
-    padding: .8rem 0;
+    margin: 40px 0 0 64px;
+    padding: 0.8rem 0;
     color: ${theme.colors.black};
     background: ${theme.colors.white};
     cursor: pointer;
     box-sizing: border-box;
+  }
+  ${theme.device.tablet} {
+    padding: 0;
+    input {
+      width: 75%;
+    }
+    #email {
+      width: 75%;
+    }
+    .textarea-box {
+      textarea {
+        width: 75%;
+      }
+    }
+    .submit-btn {
+      width: 75%;
+    }
   }
 `;
 

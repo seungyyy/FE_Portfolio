@@ -33,9 +33,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>충북 휴양림에서 조회 및 저장하는 서비스</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>17% (팀 인원: 6명) <span>배포</span> netify
                 </p>
@@ -82,9 +84,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>다중 선택 가능한 커스텀 듀얼 셀렉터</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>17% (팀 인원: 6명) <span>배포</span> github.io
                 </p>
@@ -131,9 +135,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>병명을 검색하고 추천해주는 검색창 만들기</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>50% (팀 인원: 2명) <span>배포</span> github.io
                 </p>
@@ -163,7 +169,7 @@ const CareerListContainer = () => {
               <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>리덕스 툴킷 데이터 관리</li>
-                <li>RTK Query로 비동기 처리 api 호출 시 빈값일 때 호출하지 않도록 skip으로 처리</li>
+                <li>RTK Query로 비동기 처리 api 호출 시 빈값일 때<br /> 호출하지 않도록 skip으로 처리</li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>
@@ -181,9 +187,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
-                <h3>데이터를 시각화하여 진단검사 결과 모바일 웹페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
+                <h3>데이터를 시각화하여 검사결과 모바일 웹페이지</h3>
                 <p>
                   <span>참여율</span>17% (팀 인원: 6명) <span>배포</span> vercel
                 </p>
@@ -229,9 +237,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>이미지 위에 드래그하여 영역 잡아주는 페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>10% (팀 인원: 4명) <span>배포</span> vercel
                 </p>
@@ -280,9 +290,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
-                <h3>쇼핑몰 의류 검색, 조회 웹페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
+                <h3>쇼핑몰 의류 검색 및 조회 웹 페이지</h3>
                 <p>
                   <span>참여율</span>17% (팀 인원: 6명) <span>배포</span> vercel
                 </p>
@@ -328,9 +340,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>게임 전적 랭킹 조회 및 검색 웹페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>17% (팀 인원: 6명) <span>배포</span> vercel
                 </p>
@@ -379,9 +393,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>간병인 신청하기 모바일 웹페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>15% (팀 인원: 7명) <span>배포</span> vercel
                 </p>
@@ -428,9 +444,11 @@ const CareerListContainer = () => {
             <img src="./images/wanted-logo.png" alt="" />
             <Content>
               <Title>
+                <div className="date-box">
+                  <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
+                  <span className="date-text">2022.02.21 - 2022.04</span>
+                </div>
                 <h3>커스텀 폼 생성 및 저장할 수 있는 웹 페이지</h3>
-                <span className="explanation-text">원티드 프리온보딩 프론트엔드 코스</span>
-                <span className="date-text">2022.02.21 - 2022.04</span>
                 <p>
                   <span>참여율</span>15% (팀 인원: 7명) <span>배포</span> vercel
                 </p>
@@ -480,8 +498,8 @@ const Container = styled.div`
   max-width: 1100px;
   .describe-img {
     margin-top: 6rem;
-    margin-right: 50px ;
-  } 
+    margin-right: 50px;
+  }
   .swiper-button-next {
     transform: rotate(270deg) translateX(50%);
     background-size: 50% auto;
@@ -500,6 +518,23 @@ const Container = styled.div`
     height: 10px;
     transform: translateY(-250%);
     background-color: ${theme.colors.black};
+  }
+  ${theme.device.laptop} {
+    max-width: 600px;
+    .swiper-button-next {
+      margin-right: -15px;
+      background-size: 80% auto;
+    }
+    .swiper-button-prev {
+      margin-left: -15px;
+      background-size: 80% auto;
+    }
+  }
+  ${theme.device.tablet} {
+    max-width: 500px;
+  }
+  ${theme.device.custom} {
+    min-width: 355px;
   }
 `;
 
@@ -523,59 +558,129 @@ const ContentContainer = styled.li`
       line-height: 1.5;
     }
   }
+  ${theme.device.laptop} {
+    flex-direction: column;
+    padding: 1rem 2.2rem 3.5rem;
+    img {
+      display: none;
+    }
+  }
+  ${theme.device.custom} {
+    li {
+      font-size: 16px;
+    }
+  }
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+  ${theme.device.custom} {
+    max-width: 250px;
+  }
+`;
 
 const Title = styled.div`
   position: relative;
   h3 {
-    margin-top: 25px;
+    display: inline-block;
+    margin-top: 5px;
     font-size: 2rem;
     font-family: 'SpoqaHanSansNeo-Medium';
     letter-spacing: -2px;
   }
-  .explanation-text {
-    position: absolute;
-    left: 0;
-    top: -25px;
-  }
-  .date-text {
-    position: absolute;
-    right: 0;
-    top: -23px;
-    font-size: 0.8rem;
+  .date-box {
+    margin-top: 10px;
+    overflow: hidden;
+    .explanation-text {
+      float: left;
+    }
+    .date-text {
+      float: right;
+      font-size: 0.8rem;
+    }
+    &::after {
+      content: '';
+      clear: both;
+    }
   }
   p {
-    margin-top: 14px;
+    margin-top: 5px;
     span {
-      margin: 0 0.5rem;
       font-size: 1.2rem;
     }
     &:not(:first-of-type) {
       margin-right: 1rem;
     }
   }
+  ${theme.device.laptop} {
+    h3 {
+      font-size: 1.4rem;
+    }
+    .date-box {
+      .date-text {
+        font-size: 14px;
+      }
+      .explanation-text {
+        font-size: 14px;
+      }
+    }
+    p {
+      span {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  ${theme.device.custom} {
+    h3 {
+      font-size: 1.1rem;
+    }
+    .date-box {
+      .date-text {
+        display: block;
+        font-size: 12px;
+        float: none;
+      }
+      .explanation-text {
+        font-size: 12px;
+        float: none;
+      }
+    }
+    p {
+      span {
+        font-size: 14px;
+      }
+    }
+  }
 `;
 
 const GitLink = styled.a`
   position: absolute;
-  top: 0.5rem;
-  right: -1.9rem;
-  font-size: 1.5rem;
+  top: 1.7rem;
+  right: -1.5rem;
+  font-size: 1.2rem;
+  ${theme.device.custom} {
+    top: 1rem;
+    right: 2.5rem;
+  }
 `;
 
 const Link = styled.a`
   position: absolute;
-  top: 0.5rem;
-  right: -4rem;
-  font-size: 1.5rem;
+  top: 1.7rem;
+  right: -3.2rem;
+  font-size: 1.2rem;
+  ${theme.device.custom} {
+    top: 1rem;
+    right: .5rem;
+  }
 `;
 
 const SubMenu = styled.p`
   font-size: 1.2rem;
   margin: 1rem 1rem 0.2rem 0;
   font-family: 'SpoqaHanSansNeo-Medium';
+  ${theme.device.tablet} {
+    font-size: 16px;
+  }
 `;
 
 const Describe = styled.div`
@@ -586,6 +691,18 @@ const Describe = styled.div`
   }
   span {
     margin-left: 5px;
+  }
+  ${theme.device.tablet} {
+    max-width: 350px;
+    p {
+      font-size: 1rem;
+    }
+  }
+  ${theme.device.custom} {
+    max-width: 250px;
+    p {
+      margin-top: 15px;
+    }
   }
 `;
 export default CareerListContainer;

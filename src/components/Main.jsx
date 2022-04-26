@@ -32,8 +32,9 @@ const Main = () => {
       <p className="main-txt">
         안녕하세요. 프론트엔드 개발자 이승연입니다. <br />
         배포를 통한 사용자 피드백과 비즈니스적 관점에서 고객 UI/UX에 대해 한번 더 생각하는 개발자입니다. <br />
-        서버 api와 연결해 사이트 배포 경험을 통해서 설계와 협업에 대해 배울 수 있었습니다. <br />
-        서비스에 대해 생각하고 몰입하여 디테일한 것도 놓치지 않는 개발자입니다.
+        원티드 프리온보딩 프론트엔드를 하며 팀과제8개와 개인과제1개를 하였습니다. <br />
+        이러한 경험을 통해서 설계와 협업에 대해 배울 수 있었습니다. <br />
+        서비스에 대해 생각하고 몰입하며 웹 표준과 접근성을 고려하며 개발합니다.
       </p>
       <ContactBtn
         onClick={() => {
@@ -62,7 +63,7 @@ const Main = () => {
         }}
         className="arrow-btn"
       >
-        <FaAngleDown color="#fcfff6" size={70} />
+        <FaAngleDown color="#fcfff6"/>
       </motion.button>
     </Container>
   );
@@ -90,12 +91,27 @@ const Container = styled.div`
   }
   .arrow-btn {
     position: absolute;
-    bottom: 10%;
-    transform: translate(-50%, 0%);
+    bottom: 7%;
     left: 50%;
+    transform: translateX(-50%);
     padding: 2rem;
     box-sizing: border-box;
     cursor: pointer;
+    font-size: 4.2rem;
+  }
+  ${theme.device.tablet} {
+    padding-top: 7rem;
+    .arrow-btn {
+      font-size: 4rem;
+      left: 40%;
+    }
+    .main-tit {
+      font-size: 2rem;
+    }
+    .main-txt {
+      font-size: 1rem;
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -129,6 +145,9 @@ const ImageBox = styled.div`
   bottom: calc(100% - 850px);
   right: calc(1000px - 800px);
   width: 500px;
+  @media screen and (max-width: 1500px) {
+    display: none;
+  }
 `;
 
 

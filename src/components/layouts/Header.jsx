@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../../theme';
 import { useNavigate } from 'react-router-dom';
-
+import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
   const navigation = useNavigate();
+  const [isOn, setIsOn] = useState(false);
 
   const handleNavigate = (e) => { 
     if (e.target.tagName === 'IMG' || e.target.textContent === 'Home') {
@@ -24,7 +25,7 @@ const Header = () => {
         <div onClick={handleNavigate}>
           <img src="./images/logo.png" alt="logo" className="logo-img" />
         </div>
-        <ul className="nav-list">
+        <ul className={isOn ? 'show-menu nav-list' : 'hidden nav-list'}>
           <li onClick={handleNavigate}>
             <button>Home</button>
           </li>
@@ -35,6 +36,7 @@ const Header = () => {
             <button>Skills</button>
           </li>
         </ul>
+        <FaBars size={35} className="menu-bar" color={theme.colors.white} onClick={() => { setIsOn(!isOn)} } />
       </nav>
     </Headers>
   );
@@ -51,6 +53,9 @@ const Headers = styled.header`
       width: 50px;
       object-fit: cover;
     }
+    .menu-bar {
+      display: none;
+    }
     .nav-list {
       display: flex;
       li {
@@ -63,6 +68,29 @@ const Headers = styled.header`
         color: ${theme.colors.white};
         font-size: 1.4rem;
         cursor: pointer;
+      }
+    }
+    ${theme.device.tablet} {
+      .menu-bar {
+        display: block;
+      }
+      .nav-list.hidden {
+        display: none;
+      }
+      .show-menu.nav-list {
+        position: fixed;
+        right: 40px;
+        top: 82px;
+        flex-direction: column;
+        text-align: right;
+        z-index: 30;
+        li {
+          margin: 0;
+          padding-bottom: 10px;
+          button {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }

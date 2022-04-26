@@ -81,10 +81,22 @@ const ContentContainer = styled.div`
       line-height: 1.5;
     }
   }
+  ${theme.device.laptop} {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const Content = styled.div`
   padding-right: 3rem;
+  box-sizing: border-box;
+  ${theme.device.laptop} {
+    padding: 2rem;
+  }
+  ${theme.device.custom} {
+    padding-top: 0;
+  }
 `;
 
 const Title = styled.div`
@@ -114,7 +126,40 @@ const Title = styled.div`
     top: 0;
     right: 30%;
     font-size: 1rem;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
+  }
+  ${theme.device.laptop} {
+    h3 {
+      font-size: 1.4rem;
+    }
+    .date-text {
+      font-size: 14px;
+      top: -20px;
+    }
+    p {
+      font-size: 14px;
+      span {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+    .deploy-text {
+      position: absolute;
+      top: -10px;
+      right: 30%;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+  }
+  ${theme.device.custom} {
+    margin: 0;
+    h3 {
+      font-size: 1.4rem;
+    }
+    .deploy-text {
+      position: static;
+      font-size: 14px;
+    }
   }
 `;
 
@@ -122,7 +167,7 @@ const GitLink = styled.a`
   position: absolute;
   top: 0.5rem;
   right: 5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 100;
 `;
 
@@ -130,7 +175,7 @@ const Link = styled.a`
   position: absolute;
   top: 0.5rem;
   right: 2.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 100;
 `;
 
@@ -138,7 +183,7 @@ const YoutubeLink = styled.a`
   position: absolute;
   top: 0.5rem;
   right: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   z-index: 100;
 `;
 
@@ -146,5 +191,8 @@ const SubMenu = styled.p`
   font-size: 1.2rem;
   margin: 1rem 1rem 0.2rem 0;
   font-family: 'SpoqaHanSansNeo-Medium';
+  ${theme.device.custom} {
+    font-size: 16px;
+  }
 `;
 export default TeamListContainer;

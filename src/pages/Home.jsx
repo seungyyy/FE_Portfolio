@@ -59,6 +59,10 @@ const Div = styled.div`
       content: '';
       clear: both;
     }
+    ${theme.device.tablet} {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 

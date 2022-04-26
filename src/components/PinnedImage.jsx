@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { linkNameState } from '../atom/atomState';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const linkList = [
   {
@@ -75,16 +76,17 @@ const ImgContainer = styled.div`
     height: 100%;
     object-fit: cover;
     transition: opacity ease;
-    &[data-ison="true"] {
-    animation: visible 3s;
-    @keyframes visible {
-      0% {
-        opacity: 0
-      } 100% {
-        opacity: 1
+    &[data-ison='true'] {
+      animation: visible 3s;
+      @keyframes visible {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     }
-  }
   }
   .sub-img {
     width: 80%;
@@ -92,7 +94,17 @@ const ImgContainer = styled.div`
     object-fit: contain;
     opacity: 1;
   }
-  
+  ${theme.device.tablet} {
+    width: auto;
+    padding: 2.4rem;
+    float: none;
+    margin: 0;
+    height: auto;
+    margin-bottom: 50px;
+    img {
+      border-radius: 0;
+    }
+  }
 `;
 
 export default PinnedImage;

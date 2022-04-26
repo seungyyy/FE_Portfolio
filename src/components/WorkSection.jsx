@@ -57,7 +57,7 @@ const WorkSection = () => {
 
   return (
     <Section>
-      <article className="">
+      <article>
         <motion.article
           onClick={handleClickArticle}
           id="personal"
@@ -99,7 +99,7 @@ const WorkSection = () => {
           {isChoice.isTeam && <TeamListContainer />}
         </motion.article>
       </article>
-      <article className="carrer-article">
+      <article>
         <motion.article
           onClick={handleClickArticle}
           id="career"
@@ -139,9 +139,7 @@ const Section = styled.section`
     h2 {
       font-size: 10rem;
       font-family: 'SpoqaHanSansNeo-Medium';
-      text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5,
-        -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5,
-        -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+      ${theme.common.textShadow}
     }
     img {
       width: 41.5%;
@@ -187,11 +185,26 @@ const Section = styled.section`
     }
   }
   .career-article {
-    margin: -0.5rem 3rem 0 0;
     background-color: #568eb2;
     img {
       width: 87.5%;
       object-fit: cover;
+    }
+  }
+  ${theme.device.laptop} {
+    height: auto;
+    flex-direction: column;
+    .project-article,
+    .carrer-article {
+      flex-direction: column;
+      margin-right: 3rem;
+      h2 {
+        font-size: 3rem;
+      }
+      img {
+        width: 25%;
+        object-fit: cover;
+      }
     }
   }
 `;
