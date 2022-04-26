@@ -23,7 +23,7 @@ const Home = () => {
       setState(true);
       scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsBottom(!isBottom);
-      setIsContanct(true);
+      if (contactValue) setIsContanct(true);
     }
     if (contactValue === true) {
       setState(true);
@@ -31,7 +31,7 @@ const Home = () => {
       contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
   }, [isBottom, setIsBottom, state, contactValue, setIsContanct]);
- 
+
   return (
     <>
       <Header />

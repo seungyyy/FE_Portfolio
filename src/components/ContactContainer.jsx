@@ -81,9 +81,11 @@ const ContactContainer = ({ forwarRef }) => {
   return (
     <Container ref={forwarRef}>
       <MenuBar />
-        <h2>Contact</h2>
+      <h2>Contact</h2>
       <Content>
-        <p><span>Mail</span>dus3214@gmail.com</p>
+        <p>
+          <span>Mail</span>dus3214@gmail.com
+        </p>
         <Form onSubmit={onSubmit}>
           <div>
             <label htmlFor="name">이름</label>
@@ -132,6 +134,7 @@ const ContactContainer = ({ forwarRef }) => {
 };
 
 const Container = styled.div`
+  height: 100vh;
   h2 {
     margin: 5rem 2.4rem 2.4rem;
     padding-bottom: .5rem;
@@ -147,7 +150,6 @@ const Content = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 2.4rem;
-  margin-bottom: 200px;
   p {
     flex: 2;
     margin-top: 50px;
