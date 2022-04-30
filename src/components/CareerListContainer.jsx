@@ -141,7 +141,7 @@ const CareerListContainer = () => {
                 </div>
                 <h3>병명을 검색하고 추천해주는 검색창 만들기</h3>
                 <p>
-                  <span>참여율</span>50% (팀 인원: 2명) <span>배포</span> github.io
+                  <span>참여율</span>50% (팀 인원: 2명) <span>배포</span> vercel
                 </p>
                 <GitLink href="https://github.com/wanted-codestates-project-team-05/wanted-codestates-project-05-10-1">
                   <FaGithub
@@ -169,7 +169,9 @@ const CareerListContainer = () => {
               <SubMenu>기능/역할</SubMenu>
               <ul>
                 <li>리덕스 툴킷 데이터 관리</li>
-                <li>RTK Query로 비동기 처리 api 호출 시 빈값일 때<br /> 호출하지 않도록 skip으로 처리</li>
+                <li>
+                  RTK Query로 비동기 처리 api 호출 시 빈값일 때<br /> 호출하지 않도록 skip으로 처리
+                </li>
                 <li>서비스 배포</li>
               </ul>
               <SubMenu>스택</SubMenu>
