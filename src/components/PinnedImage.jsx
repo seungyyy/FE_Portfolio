@@ -22,7 +22,7 @@ const linkList = [
   },
   {
     name: '청귤마켓',
-    url: 'http://chungyul.shop/',
+    url: 'https://chungyul.shop/',
     img: './images/link-snsproject.png',
   },
 ];

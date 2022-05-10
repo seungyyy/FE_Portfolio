@@ -27,7 +27,7 @@ const TeamListContainer = () => {
               }}
             />
           </GitLink>
-          <Link href="http://chungyul.shop/">
+          <Link href="https://chungyul.shop/">
             <FaLink
               onClick={() => {
                 window.open('http://chungyul.shop/', '_blank', 'noopener noreferrer');
