@@ -11,7 +11,6 @@ const Skills = () => {
       <Header />
       <Container>
         <Content>
-          <div className="rotate"></div>
           <motion.div initial={{ x: '-100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2 }}>
             <SkillContainer title={'Frontend'} name={'frontend'} />
           </motion.div>
@@ -51,36 +50,6 @@ const Content = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  .rotate {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url('./images/Saly-43.png') no-repeat center;
-    background-size: cover;
-    z-index: 20;
-    transform: scaleX(-1) rotate(-90deg);
-    animation: moveframe 20s infinite ease-in;
-    @keyframes moveframe {
-      0% {
-        transform: translate(-1200px, 550px) scaleX(-1) rotate(-90deg);
-      }
-      50% {
-        transform: translate(1000px, 550px) scaleX(-1) rotate(-90deg);
-      }
-      51% {
-        transform: translate(1000px, 550px) scaleX(-1) rotate(-45deg);
-      }
-      75% {
-        transform: translate(500px, 550px) scaleX(-1) rotate(90deg);
-      }
-      76% {
-        transform: translate(500px, 550px) scaleX(-1) rotate(90deg);
-      }
-      100% {
-        transform: translate(-1200px, 550px) scaleX(-1) rotate(90deg);
-      }
-    }
   }
   ${theme.device.laptop} {
     flex-direction: column;

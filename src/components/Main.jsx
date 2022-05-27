@@ -59,7 +59,7 @@ const Main = () => {
         animate={{ y: 60 }}
         transition={{ repeat: Infinity, duration: 2.5 }}
         onClick={() => {
-          setIsArrow(!isArrow);
+          setIsArrow(true);
         }}
         className="arrow-btn"
       >

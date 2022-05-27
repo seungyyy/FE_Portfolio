@@ -186,8 +186,9 @@ const Section = styled.section`
   }
   .career-article {
     background-color: #568eb2;
+    margin: 2.5rem 3rem 2.5rem 3rem;
     img {
-      width: 87.5%;
+      width: 90.5%;
       object-fit: cover;
     }
   }

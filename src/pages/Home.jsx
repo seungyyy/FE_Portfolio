@@ -10,26 +10,37 @@ import MenuBar from '../components/layouts/MenuBar';
 import theme from '../theme';
 import ContactContainer from '../components/ContactContainer';
 
+
 const Home = () => {
-  const scrollRef = useRef();
-  const contactRef = useRef();
+  const refs = useRef([]);
   const [isBottom, setIsBottom] = useRecoilState(scrollArrowOnOffState);
   const contactValue = useRecoilValue(scrollContactOnOffState);
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
+  const [disableScroll, setDisabledScroll] = useState(false);
   const [, setIsContanct] = useRecoilState(scrollContactOnOffState);
+  
+  const root = document.getElementById('root');
+  
+  useEffect(() => {
+    if (disableScroll === false) {
+      root.classList.add('stop-scrolling');
+      setDisabledScroll(true);
+    } 
+  })
 
-  console.log(state)
   useEffect(() => {
     if (isBottom) {
+      root.classList.remove('stop-scrolling');
       setState(true);
-      scrollRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsBottom(!isBottom);
+      refs.current[0]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsBottom(false);
       if (contactValue) setIsContanct(true);
     }
     if (contactValue === true) {
+      root.classList.remove('stop-scrolling');
       setState(true);
       setIsBottom(true);
-      contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      refs.current[1]?.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
   }, [isBottom, setIsBottom, state, contactValue, setIsContanct]);
 
@@ -37,16 +48,14 @@ const Home = () => {
     <>
       <Header />
       <Main />
-      {state && (
-        <Div ref={scrollRef}>
-          <MenuBar />
-          <section>
-            <PinnedImage />
-            <PinnedLinkList />
-          </section>
-        </Div>
-      )}
-      {contactValue && <ContactContainer forwarRef={contactRef} />}
+      <Div ref={(el) => (refs.current[0] = el)}>
+        <MenuBar />
+        <section>
+          <PinnedImage />
+          <PinnedLinkList />
+        </section>
+      </Div>
+      {contactValue && <ContactContainer forwarRef={(el) => (refs.current[1] = el)} />}
     </>
   );
 }
@@ -66,5 +75,6 @@ const Div = styled.div`
     }
   }
 `;
+
 
 export default Home;
