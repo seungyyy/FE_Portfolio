@@ -145,6 +145,27 @@ const Container = styled.div`
       opacity: 0;
     }
   }
+  ${theme.device.laptop} {
+    float: none;
+    li {
+      width: 650px;
+      padding: 1.5rem;
+      .pinned-title {
+        font-size: 1.3rem;
+      }
+      span {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    .pinned-ani {
+      img {
+        display: none;
+      }
+    }
+  }
   ${theme.device.tablet} {
     float: none;
     li {

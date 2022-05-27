@@ -18,6 +18,7 @@ const Home = () => {
   const [state, setState] = useState(false)
   const [, setIsContanct] = useRecoilState(scrollContactOnOffState);
 
+  console.log(state)
   useEffect(() => {
     if (isBottom) {
       setState(true);
@@ -59,7 +60,7 @@ const Div = styled.div`
       content: '';
       clear: both;
     }
-    ${theme.device.tablet} {
+    ${theme.device.laptop} {
       flex-direction: column;
       align-items: center;
     }

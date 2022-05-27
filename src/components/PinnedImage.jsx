@@ -66,7 +66,7 @@ const PinnedImage = () => {
 
 const ImgContainer = styled.div`
   float: left;
-  width: 65%;
+  width: 45%;
   height: 80%;
   margin-right: 50px;
   cursor: pointer;
@@ -94,16 +94,18 @@ const ImgContainer = styled.div`
     object-fit: contain;
     opacity: 1;
   }
-  ${theme.device.tablet} {
-    width: auto;
+  ${theme.device.laptop} {
+    width: 55%;
     padding: 2.4rem;
     float: none;
     margin: 0;
     height: auto;
-    margin-bottom: 50px;
     img {
       border-radius: 0;
     }
+  }
+  ${theme.device.tablet} {
+    width: auto;
   }
 `;
 
