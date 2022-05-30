@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
+  overflow-x: hidden;
   background-color: #16161C;
   font-family: "SpoqaHanSansNeo-Regular", "sans-serif";
 }

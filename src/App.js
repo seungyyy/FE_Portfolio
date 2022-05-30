@@ -5,10 +5,9 @@ import Home from './pages/Home';
 import Skills from './pages/Skills';
 import Work from './pages/Work';
 
-
 function App() {
   return (
-    <div>
+    <>
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
@@ -18,7 +17,7 @@ function App() {
           <Route></Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 
