@@ -36,13 +36,13 @@ const MenuBar = () => {
           </button>
           <ul className={isMenu ? 'nav-column-list' : 'nav-list'}>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
-              <button>Home</button>
+              <button className="nav-list-button">Home</button>
             </li>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
-              <button>Career/Project</button>
+              <button className="nav-list-button">Career/Project</button>
             </li>
             <li onClick={handleNavigate} className={isMenu ? '' : 'menu-hidden'}>
-              <button>Skills</button>
+              <button className="nav-list-button">Skills</button>
             </li>
           </ul>
         </div>
@@ -52,11 +52,12 @@ const MenuBar = () => {
 };
 
 const Headers = styled.header`
-  padding: 2.4rem 3rem;
-  box-sizing: border-box;
   nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 2.4rem 3rem;
+    box-sizing: border-box;
   }
   .logo-img {
     width: 50px;
@@ -64,16 +65,16 @@ const Headers = styled.header`
   }
   .menu-bar {
     width: 55px;
+    padding: 0;
     object-fit: cover;
   }
   .menu-hidden {
     display: none;
   }
-  button {
+  .nav-list-button {
     color: ${theme.colors.white};
     font-size: 1.4rem;
     line-height: 1.5;
-    cursor: pointer;
   }
   .menu-column {
     position: relative;
@@ -87,6 +88,26 @@ const Headers = styled.header`
         margin-bottom: 1rem;
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+    }
+  }
+  ${theme.device.mobile} {
+    nav {
+      padding: 2rem 1.8rem;
+      .logo-img {
+        width: 37px;
+        object-fit: cover;
+      }
+      .menu-bar svg {
+        width: 25px;
+      }
+      .nav-column-list {
+        margin-top: 8px;
+        .nav-list-button {
+          margin-right: 36px;
+          font-size: 18px;
+          line-height: 1;
         }
       }
     }

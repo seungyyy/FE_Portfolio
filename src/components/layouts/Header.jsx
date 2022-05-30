@@ -43,12 +43,12 @@ const Header = () => {
 }
 
 const Headers = styled.header`
-  padding: 2.4rem 3rem;
-  box-sizing: border-box;
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2.4rem 3rem;
+    box-sizing: border-box;
     .logo-img {
       width: 50px;
       object-fit: cover;
@@ -91,6 +91,20 @@ const Headers = styled.header`
             font-size: 1rem;
           }
         }
+      }
+    }
+    ${theme.device.mobile} {
+      padding: 2rem 1.8rem;
+      .logo-img {
+        width: 37px;
+        object-fit: cover;
+      }
+      .menu-bar {
+        width: 25px;
+      }
+      .show-menu.nav-list {
+        right: 24px;
+        font-size: 18px;
       }
     }
   }

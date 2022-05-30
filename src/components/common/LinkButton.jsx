@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../../theme';
 
 const LinkButton = ({ src, name }) => {
 
@@ -30,6 +31,9 @@ const Button = styled.button`
   &.velog-btn {
     margin-left: 4px;
     width: 40px;
+  }
+  ${theme.device.mobile} {
+    width: 60px;
   }
 `;
 

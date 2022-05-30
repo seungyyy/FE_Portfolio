@@ -8,7 +8,7 @@ import { scrollArrowOnOffState, scrollContactOnOffState } from '../atom/atomStat
 import { FaAngleDown } from 'react-icons/fa';
 
 const Main = () => {
-  const [isArrow, setIsArrow] = useRecoilState(scrollArrowOnOffState);
+  const [, setIsArrow] = useRecoilState(scrollArrowOnOffState);
   const [, setIsContact] = useRecoilState(scrollContactOnOffState);
   const [text, setText] = useState('');
   const [count, setCount] = useState(0);
@@ -36,22 +36,24 @@ const Main = () => {
         이러한 경험을 통해서 설계와 협업에 대해 배울 수 있었습니다. <br />
         서비스에 대해 생각하고 몰입하며 웹 표준과 접근성을 고려하며 개발합니다.
       </p>
-      <ContactBtn
-        onClick={() => {
-          setIsContact(true);
-        }}
-        className="contact-btn"
-      >
-        Contact me
-      </ContactBtn>
-      <ul className="about-list">
-        <li>
-          <LinkButton src={'./images/github-logo-white.png'} name="git" />
-        </li>
-        <li>
-          <LinkButton src={'./images/velog-icon.png'} name="velog" />
-        </li>
-      </ul>
+      <div className="btn-container">
+        <ContactBtn
+          onClick={() => {
+            setIsContact(true);
+          }}
+          className="contact-btn"
+        >
+          Contact me
+        </ContactBtn>
+        <ul className="about-list">
+          <li className="about-li-first about-li">
+            <LinkButton src={'./images/github-logo-white.png'} name="git" />
+          </li>
+          <li className="about-li-second about-li">
+            <LinkButton src={'./images/velog-icon.png'} name="velog" />
+          </li>
+        </ul>
+      </div>
       <ImageBox>
         <img src="./images/main-img.png" alt="img" />
       </ImageBox>
@@ -63,7 +65,7 @@ const Main = () => {
         }}
         className="arrow-btn"
       >
-        <FaAngleDown color="#fcfff6"/>
+        <FaAngleDown color="#fcfff6" />
       </motion.button>
     </Container>
   );
@@ -100,10 +102,10 @@ const Container = styled.div`
     font-size: 4.2rem;
   }
   ${theme.device.tablet} {
-    padding-top: 7rem;
+    padding: 3.5rem 2rem 0;
     .arrow-btn {
       font-size: 4rem;
-      left: 40%;
+      left: 34%;
     }
     .main-tit {
       font-size: 2rem;
@@ -111,6 +113,21 @@ const Container = styled.div`
     .main-txt {
       font-size: 1rem;
       margin-top: 20px;
+    }
+  }
+  ${theme.device.mobile} {
+    .btn-container {
+      position: relative;
+    }
+    .about-li {
+      bottom: 0;
+      position: absolute;
+    }
+    .about-li-first {
+      left: 40%;
+    }
+    .about-li-second {
+      left: 60%;
     }
   }
 `;
@@ -137,6 +154,9 @@ const ContactBtn = styled.button`
     100% {
       background-position: 0% 50%;
     }
+  }
+  ${theme.device.mobile} {
+    display: inline-block;
   }
 `;
 

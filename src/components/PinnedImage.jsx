@@ -94,12 +94,13 @@ const ImgContainer = styled.div`
     opacity: 1;
   }
   ${theme.device.laptop} {
-    width: 55%;
+    width: 60%;
     padding: 2.4rem;
     float: none;
     margin: 0;
     height: auto;
     img {
+      width: 100%;
       border-radius: 0;
     }
   }

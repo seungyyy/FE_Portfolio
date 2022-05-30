@@ -187,6 +187,12 @@ const Container = styled.div`
       }
     }
   }
+  ${theme.device.mobile} {
+    padding: 0 2rem;
+    li {
+      width: 300px;
+    }
+  }
 `;
 
 export default PinnedLinkList;

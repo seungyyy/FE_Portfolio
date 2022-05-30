@@ -534,6 +534,12 @@ const Container = styled.div`
   }
   ${theme.device.tablet} {
     max-width: 500px;
+    .swiper-button-next {
+      margin-right: 60px;
+    }
+    .swiper-button-prev {
+      margin-left: 60px;
+    }
   }
   ${theme.device.custom} {
     min-width: 355px;
