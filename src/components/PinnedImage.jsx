@@ -66,13 +66,12 @@ const PinnedImage = () => {
 
 const ImgContainer = styled.div`
   float: left;
-  width: 45%;
+  width: 50%;
   height: 80%;
-  margin-right: 50px;
   cursor: pointer;
   img {
     border-radius: 0 40px 0 0;
-    width: 100%;
+    width: 130%;
     height: 100%;
     object-fit: cover;
     transition: opacity ease;

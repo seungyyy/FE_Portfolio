@@ -25,8 +25,8 @@ const Home = () => {
     if (disableScroll === false) {
       root.classList.add('stop-scrolling');
       setDisabledScroll(true);
-    } 
-  })
+    }
+  }, [disableScroll, root]);
 
   useEffect(() => {
     if (isBottom) {
@@ -42,7 +42,7 @@ const Home = () => {
       setIsBottom(true);
       refs.current[1]?.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
-  }, [isBottom, setIsBottom, state, contactValue, setIsContanct]);
+  }, [isBottom, setIsBottom, state, contactValue, setIsContanct, root]);
 
   return (
     <>
@@ -64,6 +64,7 @@ const Div = styled.div`
   section {
     ${theme.common.height}
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
     &:after {
       content: '';
