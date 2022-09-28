@@ -106,7 +106,9 @@ const WorkSection = () => {
           initial={{ x: '100%', opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 2 }}
-          className="career-article project-article"
+          className={`${
+            isChoice.isCareer ? ' career-article project-article' : 'career-article career-article-sm project-article'
+          }`}
         >
           <img
             src="./images/Saly-19.png"
@@ -176,12 +178,24 @@ const Section = styled.section`
   .team-article {
     background-color: #827ed8;
   }
+  .career-article {
+    background-color: #568eb2;
+  }
   .team-article-sm,
   .personal-article-sm {
     width: 35%;
     object-fit: cover;
     h2 {
       font-size: 5rem;
+    }
+  }
+  .career-article-sm {
+    float: right;
+    width: 35%;
+    height: 22%;
+    overflow: hidden;
+    h2 {
+      font-size: 4rem;
     }
   }
   .career-article {
